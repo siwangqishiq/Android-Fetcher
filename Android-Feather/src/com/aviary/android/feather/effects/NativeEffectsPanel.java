@@ -1303,11 +1303,12 @@ public class NativeEffectsPanel extends AbstractContentPanel implements ViewFact
 	private void updateInstalledPacks() {
 		FeatherPack packs[] = getInstalledPacks();
 		FeatherPack packs2[] = getAvailablePacks( FeatherIntent.PluginType.TYPE_FILTER );
-		int newLength = packs.length + packs2.length;
+		//int newLength = packs.length + packs2.length;
+		int newLength = packs.length;
 		FeatherPack packs3[] = new FeatherPack[newLength];
-
+		
 		System.arraycopy( packs, 0, packs3, 0, packs.length );
-		System.arraycopy( packs2, 0, packs3, packs.length, packs2.length );
+		//System.arraycopy( packs2, 0, packs3, packs.length, packs2.length );
 
 		FiltersPacksAdapter adapter = new FiltersPacksAdapter( getContext().getBaseContext(), R.layout.feather_workspace_screen,
 				R.layout.feather_filter_pack, packs3 );

@@ -456,13 +456,15 @@ public class StickersPanel extends AbstractContentPanel implements OnUpdateListe
 	private void updateInstalledPacks() {
 
 		FeatherPack[] packs = getInstalledPacks();
-		FeatherPack[] packs2 = getAvailablePacks( FeatherIntent.PluginType.TYPE_STICKER );
+		//修改  仅展示本机的贴图素材
+		//FeatherPack[] packs2 = getAvailablePacks( FeatherIntent.PluginType.TYPE_STICKER );
 
-		int newLength = packs.length + packs2.length;
+		//int newLength = packs.length + packs2.length;
+		int newLength =  packs.length;
 		FeatherPack[] packs3 = new FeatherPack[newLength];
 
 		System.arraycopy( packs, 0, packs3, 0, packs.length );
-		System.arraycopy( packs2, 0, packs3, packs.length, packs2.length );
+		//System.arraycopy( packs2, 0, packs3, packs.length, packs2.length );
 
 		StickersPacksAdapter adapter = new StickersPacksAdapter( getContext().getBaseContext(), R.layout.feather_workspace_screen,
 				R.layout.feather_sticker_pack, packs3 );
@@ -884,6 +886,7 @@ public class StickersPanel extends AbstractContentPanel implements OnUpdateListe
 		 */
 		@Override
 		public int getCount() {
+			//System.out.println("dasdsad-->"+ super.getCount());
 			return (int) Math.ceil( (double) ( super.getCount() ) / mWorkspaceItemsPerPage );
 		}
 
