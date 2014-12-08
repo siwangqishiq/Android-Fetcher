@@ -1237,7 +1237,7 @@ public class FeatherActivity extends MonitoredActivity implements OnToolbarClick
 			finish();
 
 		} else {
-			ThreadUtils.startBackgroundJob( this, null, "Saving...", new Runnable() {
+			ThreadUtils.startBackgroundJob( this, null, "保存...", new Runnable() {
 
 				@Override
 				public void run() {
